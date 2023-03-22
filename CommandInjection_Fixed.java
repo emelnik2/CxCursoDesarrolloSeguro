@@ -12,9 +12,10 @@ public class CommandInjection {
             String fileName = reader.readLine();
 
             // Safe code
-            List<String> command = new ArrayList<String>();
-            command.add("cat");
-            command.add(fileName);
+            String userCommand = request.getParameter("Command");
+
+            userCommand = userCommand.replaceAll("[^A-Za-z0-9]", "");
+
             ProcessBuilder builder = new ProcessBuilder(command);
             Process process = builder.start();
 
