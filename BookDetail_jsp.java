@@ -30,8 +30,6 @@ public class BookDetail_jsp extends HttpJspBase {
   static final String DBusername="";
   static final String DBpassword="";
 	
-  response.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
-
   public static String loadDriver () {
     String sErr = "";
     try {
