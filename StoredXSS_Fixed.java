@@ -21,9 +21,9 @@ public class DomXssMitigationServlet extends HttpServlet {
             int read;
             do{
                 read = input.read(byteBuf, 0, byteBuf.length);
-                String escapedRead = StringEscapeUtils.escapeHtml4(read);
+                String escapedRead = StringEscapeUtils.escapeHtml4(input);
                 if(read > 0) {
-                    outputStream.write(byteBuf, 0, escapedRead);
+                    escapedRead.write(byteBuf, 0, read);
                 }
             }while (read >=0);
             input.close();
