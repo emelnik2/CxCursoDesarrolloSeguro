@@ -478,7 +478,7 @@ static final String sFileName = "BookDetail.jsp";
 
       return "sendRedirect";
     }
-    catch (Exception e) {out.println(e.toString()); }
+    //catch (Exception e) {out.println(e.toString()); }
     return (sDetailErr);
   }
 
