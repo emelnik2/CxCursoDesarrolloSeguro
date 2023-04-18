@@ -475,12 +475,14 @@ static final String sFileName = "BookDetail.jsp";
         if ( conn != null ) conn.close();
       }
       catch ( java.sql.SQLException ignore ) {}
-	
-	    response.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+   
       response.sendRedirect (sActionFileName + sParams);
 
       return "sendRedirect";
     }
+
+	   response.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+	  
     catch (Exception e) {out.println(e.toString()); }
     return (sDetailErr);
   }
