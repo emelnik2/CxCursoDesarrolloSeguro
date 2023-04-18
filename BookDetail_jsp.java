@@ -442,6 +442,8 @@ static final String sFileName = "BookDetail.jsp";
       final int iupdateAction = 2;
       final int ideleteAction = 3;
       int iAction = 0;
+	    
+      response.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
 
       if ( sAction.equalsIgnoreCase("insert") ) { iAction = iinsertAction; }
       if ( sAction.equalsIgnoreCase("update") ) { iAction = iupdateAction; }
