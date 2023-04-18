@@ -419,8 +419,7 @@ static final String sFileName = "BookDetail.jsp";
   String DetailAction(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response, javax.servlet.http.HttpSession session, javax.servlet.jsp.JspWriter out, String sAction, String sForm, java.sql.Connection conn, java.sql.Statement stat) throws java.io.IOException {
   
     String sDetailErr ="";
-     response.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
-	  
+
     try {
 
       if (sAction.equals("")) return "";
@@ -435,6 +434,8 @@ static final String sFileName = "BookDetail.jsp";
       String sWhere = " ";
       boolean bErr = false;
       long iCount = 0;
+	    
+     response.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
 
       sParams = "?";
       sParams += "item_id=" + toURL(getParam( request, "Trn_item_id"));
