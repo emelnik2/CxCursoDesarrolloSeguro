@@ -435,8 +435,6 @@ static final String sFileName = "BookDetail.jsp";
       boolean bErr = false;
       long iCount = 0;
 	    
-     response.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
-
       sParams = "?";
       sParams += "item_id=" + toURL(getParam( request, "Trn_item_id"));
       String pPKitem_id = "";
@@ -477,6 +475,8 @@ static final String sFileName = "BookDetail.jsp";
         if ( conn != null ) conn.close();
       }
       catch ( java.sql.SQLException ignore ) {}
+	
+	    response.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
       response.sendRedirect (sActionFileName + sParams);
 
       return "sendRedirect";
